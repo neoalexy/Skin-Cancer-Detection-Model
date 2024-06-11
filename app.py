@@ -1,7 +1,14 @@
 import gradio as gr
+from fastai.vision.all import *
 
-def greet(name):
-    return "Hello " + name + "!!"
+learner = load_learner('skin_cancer_detection.pkl');
 
-demo = gr.Interface(fn=greet, inputs="text", outputs="text")
-demo.launch()
+def classify_image(img):
+    pred, idx, probs = learner.predict(img)
+    return dict(zip(learner.dls.vocab, map(float, probs)))
+
+image = gr.Image();
+label = gr.Label();
+
+iface = gr.Interface(fn=classify_image, inputs=image, outputs=label)
+iface.launch(inline=False)
