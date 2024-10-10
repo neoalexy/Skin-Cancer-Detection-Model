@@ -20,7 +20,7 @@ The following images show examples of benign moles predicted by the model:
    - *This image displays a benign mole, confirmed by the model's prediction.*
    
 2. ![Benign Mole 2](docs/screenshots/benign2.png)
-   - *Another example of a benign mole, with the model indicating it is non-cancerous.*
+   - *Another example of a benign mole, with the model indicating it is non-cancerous*
 
 ### Malignant Moles
 
