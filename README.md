@@ -1,37 +1,57 @@
 # Skin Cancer Detection Model
 
+This project focuses on developing a deep learning model for skin cancer detection using fastai. The model classifies images of skin moles into two categories: **Benign Moles** (non-cancerous) and **Malignant Moles** (potentially cancerous, requiring medical attention). The model is trained on a labeled dataset and can assist in early detection of skin cancer.
+
+## Table of Contents
+- [Model Overview](#model-overview)
+- [Datasets](#datasets)
+- [Model Architecture and Training](#model-architecture-and-training)
+- [Prediction Examples](#prediction-examples)
+- [Screenshots](#screenshots)
+
 ## Model Overview
 
-The skin cancer detection model utilizes deep learning techniques to analyze images of skin moles. It classifies moles into two categories:
-- **Benign Moles**: Non-cancerous growths that do not pose any threat.
-- **Malignant Moles**: Cancerous growths, specifically melanoma, which require medical attention.
+The **Skin Cancer Detection Model** utilizes **ResNet18** architecture, implemented in fastai, for image classification. It is fine-tuned on a dataset of skin mole images to distinguish between benign and malignant moles.
 
 ## Datasets
 
-The model is trained on a dataset consisting of images of skin moles, where each mole is labeled as either benign or malignant. This dataset enables the model to learn the distinguishing features of different types of moles and make accurate predictions.
+The dataset consists of images from Kaggle, categorized into:
+- **Benign Moles**: Non-cancerous moles.
+- **Malignant Moles**: Cancerous moles, specifically melanoma.
+
+Images are organized in the following folders:
+- `benign`
+- `malignant`
+
+## Model Architecture and Training
+
+### Data Preprocessing
+- **Renaming Images**: Images are renamed based on their labels (e.g., `benign_1.jpg`, `malignant_1.jpg`).
+- **Augmentation**: Random resized crop and transformations are applied to improve model generalization.
+
+### Model Training
+- **Architecture**: The model uses **ResNet18**, fine-tuned for 4 epochs using fastai’s `fine_tune()` method.
+- **Metrics**: Error rate and confusion matrix are used to evaluate performance.
 
 ## Prediction Examples
 
-### Benign Moles
+### Benign Moles:
 
-The following images show examples of benign moles predicted by the model:
+1. **Example 1**: Image from the test folder showing a benign moles.
+   ![Benign Image 1](docs/images/benign1a.PNG)
 
-1. ![Benign Mole 1](docs/screenshots/benign1.png)
-   - *This image displays a benign mole, confirmed by the model's prediction.*
-   
-2. ![Benign Mole 2](docs/screenshots/benign2.png)
-   - *Another example of a benign mole, with the model indicating it is non-cancerous*
+2. **Example 2**: Prediction made by the model on the benign mole.
+   ![Prediction Benign 1](path/to/benign1.PNG)
+   - **Prediction**: Benign Mole (100%)
 
-### Malignant Moles
+### Malignant Moles:
 
-The following images show examples of malignant moles predicted by the model:
+1. **Example 1**: Image from the test folder showing a malignant mole.
+   ![Malignant Image 1](docs/images/malignant1a.png)
 
-1. ![Malignant Mole 1](docs/screenshots/malignant1.png)
-   - *This image displays a malignant mole, which the model identified as potentially cancerous (melanoma).*
-   
-2. ![Malignant Mole 2](docs/screenshots/malignant2.png)
-   - *Another example of a malignant mole, confirmed by the model's prediction as requiring further medical evaluation.*
+2. **Example 2**: Prediction made by the model on the malignant mole.
+   ![Prediction Malignant 1](docs/images/malignant2.png)
+   - **Prediction**: Malignant Mole (87%)
 
-## Conclusion
 
-This skin cancer detection model demonstrates the potential of deep learning in medical image analysis, particularly in the early detection of skin cancer. Accurate predictions of benign and malignant moles can assist healthcare professionals in making informed decisions about patient care.
+
