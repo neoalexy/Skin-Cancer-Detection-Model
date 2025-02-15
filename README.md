@@ -40,8 +40,8 @@ Images are organized in the following folders:
 1. **Example 1**: Image from the test folder showing a benign moles.
    ![Benign Image 1](docs/images/benign1a.png)
 
-2. **Example 2**: Prediction made by the model on the benign mole.
-   ![Prediction Benign 1](path/to/benign1.png)
+2. Prediction made by the model on the benign mole.
+   ![Prediction Benign 1](docs/images/benign1.png)
    - **Prediction**: Benign Mole (100%)
 
 ### Malignant Moles:
@@ -49,7 +49,7 @@ Images are organized in the following folders:
 1. **Example 1**: Image from the test folder showing a malignant mole.
    ![Malignant Image 1](docs/images/malignant1a.png)
 
-2. **Example 2**: Prediction made by the model on the malignant mole.
+2. Prediction made by the model on the malignant mole.
    ![Prediction Malignant 1](docs/images/malignant2.png)
    - **Prediction**: Malignant Mole (87%)
 
